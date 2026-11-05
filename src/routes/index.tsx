@@ -63,8 +63,12 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 pt-36 pb-24 lg:grid-cols-12 lg:pt-44">
-        <div className="animate-rise lg:col-span-7">
+      <section className="relative flex min-h-screen items-center">
+        <img src={hero} alt="Gold-foiled black hardcover books beside a fountain pen and ink" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        <div className="relative mx-auto w-full max-w-7xl px-6 pt-36 pb-24 lg:pt-44">
+        <div className="animate-rise max-w-3xl">
           <p className="eyebrow">Publishing · Ghostwriting · Marketing</p>
           <h1 className="mt-6 text-5xl leading-[1.02] font-light md:text-7xl lg:text-8xl">
             Stories worth<br />writing in <em className="text-gold font-normal">permanent</em> ink.
@@ -85,13 +89,6 @@ function Index() {
             ))}
           </div>
         </div>
-        <div className="relative lg:col-span-5">
-          <div className="absolute -inset-6 bg-gold opacity-10 blur-3xl" />
-          <img src={hero} alt="Gold-foiled black hardcover books beside a fountain pen and ink" width={1280} height={1536} className="relative aspect-[4/5] w-full object-cover" />
-          <div className="absolute -bottom-6 -left-6 border border-border bg-card px-6 py-4">
-            <p className="eyebrow">Est. 2019</p>
-            <p className="font-display text-lg italic">Lagos · London · New York</p>
-          </div>
         </div>
       </section>
 
@@ -240,7 +237,7 @@ function Index() {
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="font-display text-6xl md:text-8xl">Blaq<span className="text-gold italic"> Ink</span></div>
           <div className="text-sm text-muted-foreground md:text-right">
-            <p>hello@blaqink.com</p>
+            <p>hello@blaqachraf.com</p>
             <p className="mt-1">© {new Date().getFullYear()} Blaq Ink Agency. All rights reserved.</p>
           </div>
         </div>
