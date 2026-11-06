@@ -65,27 +65,35 @@ function Index() {
       {/* Hero */}
       <section aria-label="Blaq Ink publishing agency" className="opening-banner grid items-center">
         <img src={hero.url} alt="A full view of influential books, a globe, fountain pen and Blaq Ink bottle on a writing desk" width={1672} height={941} fetchPriority="high" className="col-start-1 row-start-1 block h-auto w-full" />
-        <div className="opening-copy relative col-start-1 row-start-1 mx-auto w-full max-w-7xl px-6 py-10 sm:px-10 lg:px-16 lg:py-14">
-        <div className="animate-rise max-w-2xl">
-          <p className="text-xs font-semibold uppercase text-foreground">Publishing · Ghostwriting · Marketing</p>
-          <h1 className="mt-5 text-4xl leading-tight font-light text-foreground sm:text-5xl lg:text-6xl">
+        <div aria-hidden="true" className="opening-shade pointer-events-none col-start-1 row-start-1 h-full w-full" />
+        <div className="opening-copy relative col-start-1 row-start-1 mx-auto w-full max-w-7xl px-5 py-8 sm:px-10 lg:px-16 lg:py-14">
+        <div className="animate-rise max-w-xl text-center">
+          <p className="text-[0.65rem] font-semibold tracking-[0.3em] uppercase text-antique-gold sm:text-xs">Publishing · Ghostwriting · Marketing</p>
+          <div aria-hidden="true" className="mx-auto mt-4 flex max-w-xs items-center gap-3 text-champagne">
+            <span className="h-px flex-1 bg-champagne/60" /><span className="text-xs">◆</span><span className="h-px flex-1 bg-champagne/60" />
+          </div>
+          <h1 className="mt-4 text-3xl leading-tight font-normal tracking-[0.08em] text-champagne sm:text-5xl lg:text-6xl">
             BLAQ INK AGENCY
           </h1>
-          <p className="mt-5 max-w-xl text-lg font-medium leading-relaxed text-foreground">
+          <div aria-hidden="true" className="mx-auto mt-4 flex max-w-xs items-center gap-3 text-champagne">
+            <span className="h-px flex-1 bg-champagne/60" /><span className="text-xs">◆</span><span className="h-px flex-1 bg-champagne/60" />
+          </div>
+          <p className="mt-5 font-display text-lg leading-relaxed text-ivory sm:text-xl">
             A boutique marketing agency for authors who want more than just a published book.
           </p>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground sm:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-ivory/85 sm:text-base">
             We help authors build visibility, connect with the right readers, and turn their books into stories that deserve to be discovered.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button asChild variant="outline" size="lg" className="h-auto border-foreground/70 bg-transparent py-3 font-semibold text-foreground hover:bg-foreground/10 hover:text-foreground"><a href="#contact">Book a strategy call</a></Button>
-            <Button asChild variant="ghost" size="lg" className="h-auto bg-transparent py-3 text-foreground hover:bg-foreground/10 hover:text-foreground"><a href="#work">See our work →</a></Button>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+            <Button asChild variant="outline" size="lg" className="h-auto rounded-full border-champagne/80 bg-transparent px-6 py-3 font-display tracking-wide text-ivory transition-colors hover:border-champagne hover:bg-champagne/10 hover:text-ivory"><a href="#contact">Book a strategy call ›</a></Button>
+            <span aria-hidden="true" className="hidden h-6 w-px bg-champagne/50 sm:block" />
+            <Button asChild variant="ghost" size="lg" className="h-auto bg-transparent px-2 py-3 font-display tracking-wide text-ivory hover:bg-transparent hover:text-champagne"><a href="#work">See our work →</a></Button>
           </div>
-          <div className="mt-7 grid max-w-lg grid-cols-3 gap-4 border-t border-foreground/40 pt-5">
+          <div className="mx-auto mt-7 grid max-w-md grid-cols-3 divide-x divide-champagne/40 pt-2">
             {[["1,200+", "Books published"], ["340", "Bestseller tags"], ["4.9★", "Author rating"]].map(([n, l]) => (
-              <div key={l}>
-                <div className="font-display text-2xl text-foreground sm:text-3xl">{n}</div>
-                <div className="mt-1 text-xs text-foreground">{l}</div>
+              <div key={l} className="px-2">
+                <div className="font-display text-2xl text-champagne sm:text-3xl">{n}</div>
+                <div className="mt-1 text-[0.7rem] text-ivory sm:text-xs">{l}</div>
               </div>
             ))}
           </div>
