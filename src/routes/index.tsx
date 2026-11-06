@@ -6,6 +6,14 @@ import { BookOpen, ChevronRight, PenTool, Star, Trophy } from "lucide-react";
 import { AuthorSections, MarketingSection, AuthorGuidance } from "@/components/agency-sections";
 import covers from "@/assets/covers.jpg";
 import author from "@/assets/author.jpg";
+import amazonLogo from "@/assets/amazon-logo.asset.json";
+import barnesNobleLogo from "@/assets/barnes-noble-logo.asset.json";
+import appleBooksLogo from "@/assets/apple-books-logo.asset.json";
+import audibleLogo from "@/assets/audible-logo.asset.json";
+import ingramsparkLogo from "@/assets/ingramspark-logo.asset.json";
+import koboLogo from "@/assets/kobo-logo.asset.json";
+import goodreadsLogo from "@/assets/goodreads-logo.asset.json";
+import spotifyLogo from "@/assets/spotify-logo.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,6 +36,17 @@ const services = [
   ["04", "Publishing & Distribution", "Amazon KDP, IngramSpark, Barnes & Noble, Apple Books — print, ebook and audio, worldwide."],
   ["05", "Book Marketing", "Launch strategy, Amazon ads, PR, podcast tours and BookTok campaigns built to move copies."],
   ["06", "Author Branding", "Websites, media kits and positioning that turn a single book into a lasting platform."],
+];
+
+const platforms = [
+  { name: "Amazon", logo: amazonLogo },
+  { name: "Barnes & Noble", logo: barnesNobleLogo },
+  { name: "Apple Books", logo: appleBooksLogo },
+  { name: "Audible", logo: audibleLogo },
+  { name: "IngramSpark", logo: ingramsparkLogo },
+  { name: "Kobo", logo: koboLogo },
+  { name: "Goodreads", logo: goodreadsLogo },
+  { name: "Spotify Audiobooks", logo: spotifyLogo },
 ];
 
 const process = [
@@ -101,13 +120,18 @@ function Index() {
       </section>
 
       {/* Marquee */}
-      <section className="border-y border-border py-6">
-        <div className="flex w-max animate-marquee gap-16 whitespace-nowrap font-display text-2xl text-muted-foreground italic">
-          {Array.from({ length: 2 }).flatMap((_, k) =>
-            ["Amazon", "Barnes & Noble", "Apple Books", "Audible", "IngramSpark", "Kobo", "Goodreads", "Spotify Audiobooks"].map((b) => (
-              <span key={b + k} className="flex items-center gap-16">{b}<span className="text-primary">✦</span></span>
-            )),
-          )}
+      <section aria-label="Publishing platforms" className="overflow-hidden border-y border-border py-6">
+        <div className="flex w-max animate-marquee">
+          {Array.from({ length: 2 }, (_, k) => (
+            <div key={k} aria-hidden={k === 1 ? true : undefined} className="flex shrink-0 items-center">
+              {platforms.map(({ name, logo }) => (
+                <div key={name} className="flex shrink-0 items-center gap-10 pr-10 sm:gap-16 sm:pr-16">
+                  <img src={logo.url} alt={name} width={128} height={72} className="h-16 w-28 object-contain sm:h-20 sm:w-32" />
+                  <span aria-hidden="true" className="font-display text-2xl text-primary">✦</span>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 
