@@ -63,26 +63,29 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section aria-label="Blaq Ink publishing agency">
-        <img src={hero.url} alt="A full view of influential books, a globe, fountain pen and Blaq Ink bottle on a writing desk" width={1376} height={768} fetchPriority="high" className="block h-auto w-full" />
-        <div className="mx-auto w-full max-w-7xl px-6 py-16 lg:py-20">
-        <div className="animate-rise max-w-4xl">
-          <p className="eyebrow">Publishing · Ghostwriting · Marketing</p>
-          <h1 className="mt-6 text-5xl leading-[1.02] font-light md:text-7xl lg:text-8xl">
-            Blaq <em className="text-gold font-normal">Ink</em> Agency
+      <section aria-label="Blaq Ink publishing agency" className="opening-banner grid items-center">
+        <img src={hero.url} alt="A full view of influential books, a globe, fountain pen and Blaq Ink bottle on a writing desk" width={1672} height={941} fetchPriority="high" className="col-start-1 row-start-1 block h-auto w-full" />
+        <div className="opening-copy relative col-start-1 row-start-1 mx-auto w-full max-w-7xl px-6 py-10 sm:px-10 lg:px-16 lg:py-14">
+        <div className="animate-rise max-w-2xl">
+          <p className="text-xs font-semibold uppercase text-foreground">Publishing · Ghostwriting · Marketing</p>
+          <h1 className="mt-5 text-4xl leading-tight font-light text-foreground sm:text-5xl lg:text-6xl">
+            BLAQ INK AGENCY
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Blaq Ink is a boutique agency for authors who want more than a listing. We write, publish and market books that earn readers, rankings and a legacy.
+          <p className="mt-5 max-w-xl text-lg font-medium leading-relaxed text-foreground">
+            A boutique marketing agency for authors who want more than just a published book.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Button asChild size="lg" className="h-auto bg-gold py-4 font-semibold"><a href="#contact">Book a strategy call</a></Button>
-            <Button asChild variant="outline" size="lg" className="h-auto py-4"><a href="#work">See our work →</a></Button>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-foreground sm:text-base">
+            We help authors build visibility, connect with the right readers, and turn their books into stories that deserve to be discovered.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button asChild variant="outline" size="lg" className="h-auto border-foreground/70 bg-transparent py-3 font-semibold text-foreground hover:bg-foreground/10 hover:text-foreground"><a href="#contact">Book a strategy call</a></Button>
+            <Button asChild variant="ghost" size="lg" className="h-auto bg-transparent py-3 text-foreground hover:bg-foreground/10 hover:text-foreground"><a href="#work">See our work →</a></Button>
           </div>
-          <div className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
+          <div className="mt-7 grid max-w-lg grid-cols-3 gap-4 border-t border-foreground/40 pt-5">
             {[["1,200+", "Books published"], ["340", "Bestseller tags"], ["4.9★", "Author rating"]].map(([n, l]) => (
               <div key={l}>
-                <div className="font-display text-3xl text-gold">{n}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{l}</div>
+                <div className="font-display text-2xl text-foreground sm:text-3xl">{n}</div>
+                <div className="mt-1 text-xs text-foreground">{l}</div>
               </div>
             ))}
           </div>

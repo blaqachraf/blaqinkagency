@@ -31,4 +31,4 @@ use the editor.
 
 ## Presentation rules
 - Keep supplementary author and marketing sections in a focused shared component module so the homepage remains readable.
-- Display the supplied opening photograph at its natural aspect ratio in normal page flow, with copy below it, to preserve the entire image without overlays.
+- Keep the opening photograph uncropped in a shared grid layer with the opening copy and actions, so transparent text overlays preserve the original image proportions.

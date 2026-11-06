@@ -139,6 +139,10 @@
 @utility animate-rise { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; }
 
 html { scroll-behavior: smooth; }
+.opening-copy {
+  text-shadow: 0 2px 4px var(--background), 0 0 14px var(--background), 0 0 28px var(--background);
+}
+.opening-copy a { text-shadow: inherit; }
 section[id] { scroll-margin-top: 1.5rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
