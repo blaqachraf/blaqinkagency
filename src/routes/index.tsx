@@ -126,7 +126,7 @@ function Index() {
             <div key={k} aria-hidden={k === 1 ? true : undefined} className="flex shrink-0 items-center">
               {platforms.map(({ name, logo }) => (
                 <div key={name} className="flex shrink-0 items-center gap-10 pr-10 sm:gap-16 sm:pr-16">
-                  <img src={logo.url} alt={name} width={128} height={72} className="h-16 w-28 object-contain sm:h-20 sm:w-32" />
+                  <img src={logo.url} alt={name} width={128} height={128} className="h-28 w-28 shrink-0 object-contain sm:h-32 sm:w-32" />
                   <span aria-hidden="true" className="font-display text-2xl text-primary">✦</span>
                 </div>
               ))}
