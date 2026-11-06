@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import hero from "@/assets/hero-books.jpg";
+import hero from "@/assets/ink_and_influential_reads.png.asset.json";
+import { Button } from "@/components/ui/button";
+import { AuthorSections, MarketingSection, AuthorGuidance } from "@/components/agency-sections";
 import covers from "@/assets/covers.jpg";
 import author from "@/assets/author.jpg";
 
@@ -46,39 +48,35 @@ function Index() {
   return (
     <main className="grain min-h-screen overflow-hidden bg-background text-foreground">
       {/* Nav */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <header className="relative z-50 border-b border-border bg-background">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-5">
           <a href="#" className="font-display text-2xl tracking-tight">
             Blaq<span className="text-gold italic"> Ink</span>
           </a>
-          <nav className="hidden gap-10 text-sm text-muted-foreground md:flex">
-            {["Services", "Work", "Process", "Stories", "FAQ"].map((n) => (
+          <nav className="hidden gap-6 text-sm text-muted-foreground lg:flex">
+            {["About", "Services", "Work", "Marketing", "Process", "FAQ"].map((n) => (
               <a key={n} href={`#${n.toLowerCase()}`} className="transition-colors hover:text-foreground">{n}</a>
             ))}
           </nav>
-          <a href="#contact" className="bg-gold px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">
-            Start your book
-          </a>
+          <Button asChild className="bg-gold font-semibold"><a href="#contact">Start your book</a></Button>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="relative flex min-h-screen items-center">
-        <img src={hero} alt="Gold-foiled black hardcover books beside a fountain pen and ink" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
-        <div className="relative mx-auto w-full max-w-7xl px-6 pt-36 pb-24 lg:pt-44">
-        <div className="animate-rise max-w-3xl">
+      <section aria-label="Blaq Ink publishing agency">
+        <img src={hero.url} alt="A full view of influential books, a globe, fountain pen and Blaq Ink bottle on a writing desk" width={1376} height={768} fetchPriority="high" className="block h-auto w-full" />
+        <div className="mx-auto w-full max-w-7xl px-6 py-16 lg:py-20">
+        <div className="animate-rise max-w-4xl">
           <p className="eyebrow">Publishing · Ghostwriting · Marketing</p>
           <h1 className="mt-6 text-5xl leading-[1.02] font-light md:text-7xl lg:text-8xl">
-            Stories worth<br />writing in <em className="text-gold font-normal">permanent</em> ink.
+            Blaq <em className="text-gold font-normal">Ink</em> Agency
           </h1>
           <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Blaq Ink is a boutique agency for authors who want more than a listing. We write, publish and market books that earn readers, rankings and a legacy.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#contact" className="bg-gold px-8 py-4 font-semibold text-primary-foreground">Book a strategy call</a>
-            <a href="#work" className="border border-border px-8 py-4 font-medium transition-colors hover:border-primary">See our work →</a>
+            <Button asChild size="lg" className="h-auto bg-gold py-4 font-semibold"><a href="#contact">Book a strategy call</a></Button>
+            <Button asChild variant="outline" size="lg" className="h-auto py-4"><a href="#work">See our work →</a></Button>
           </div>
           <div className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-border pt-8">
             {[["1,200+", "Books published"], ["340", "Bestseller tags"], ["4.9★", "Author rating"]].map(([n, l]) => (
@@ -110,6 +108,8 @@ function Index() {
           Most agencies publish books. <span className="text-muted-foreground">We build authors</span> — with the craft of a literary house and the instincts of a <em className="text-gold">growth studio.</em>
         </p>
       </section>
+
+      <AuthorSections />
 
       {/* Services */}
       <section id="services" className="mx-auto max-w-7xl px-6 pb-32">
@@ -145,6 +145,8 @@ function Index() {
           <img src={covers} alt="Six book covers designed by Blaq Ink" loading="lazy" width={1600} height={912} className="mt-14 w-full" />
         </div>
       </section>
+
+      <MarketingSection />
 
       {/* Process */}
       <section id="process" className="mx-auto max-w-7xl px-6 py-32">
@@ -191,6 +193,8 @@ function Index() {
         </div>
       </section>
 
+      <AuthorGuidance />
+
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-4xl px-6 pb-32">
         <p className="eyebrow text-center">Questions</p>
@@ -198,10 +202,10 @@ function Index() {
         <div className="mt-14 border-t border-border">
           {faqs.map(([q, a], i) => (
             <div key={q} className="border-b border-border">
-              <button onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between py-6 text-left text-lg">
+              <Button variant="ghost" aria-expanded={open === i} onClick={() => setOpen(open === i ? null : i)} className="h-auto w-full justify-between gap-4 whitespace-normal rounded-none px-0 py-6 text-left text-lg hover:bg-transparent hover:text-primary">
                 {q}
-                <span className="font-display text-2xl text-primary">{open === i ? "−" : "+"}</span>
-              </button>
+                <span className="shrink-0 font-display text-2xl text-primary">{open === i ? "−" : "+"}</span>
+              </Button>
               {open === i && <p className="pb-6 text-muted-foreground">{a}</p>}
             </div>
           ))}
@@ -227,13 +231,19 @@ function Index() {
                 )}
               </label>
             ))}
-            <button className="w-full bg-background py-4 font-semibold text-foreground transition-opacity hover:opacity-90">Request a consultation</button>
+            <Button type="submit" className="h-auto w-full whitespace-normal bg-background py-4 font-semibold text-foreground hover:bg-background/90">Request a consultation</Button>
           </form>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="mx-auto max-w-7xl px-6 py-16">
+        <nav aria-label="Footer" className="mb-12 grid gap-6 border-b border-border pb-10 text-sm text-muted-foreground sm:grid-cols-2 md:grid-cols-4">
+          <div><p className="mb-4 font-semibold text-foreground">The agency</p><a href="#about" className="block py-1 hover:text-primary">About Blaq Ink</a><a href="#authors" className="block py-1 hover:text-primary">Who we work with</a></div>
+          <div><p className="mb-4 font-semibold text-foreground">Your book</p><a href="#services" className="block py-1 hover:text-primary">Publishing services</a><a href="#marketing" className="block py-1 hover:text-primary">Book marketing</a></div>
+          <div><p className="mb-4 font-semibold text-foreground">Explore</p><a href="#work" className="block py-1 hover:text-primary">Selected work</a><a href="#guidance" className="block py-1 hover:text-primary">Author guidance</a></div>
+          <div><p className="mb-4 font-semibold text-foreground">Let’s talk</p><a href="#contact" className="block py-1 hover:text-primary">Start your book</a><a href="mailto:hello@blaqachraf.com" className="block break-words py-1 hover:text-primary">hello@blaqachraf.com</a></div>
+        </nav>
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="font-display text-6xl md:text-8xl">Blaq<span className="text-gold italic"> Ink</span></div>
           <div className="text-sm text-muted-foreground md:text-right">

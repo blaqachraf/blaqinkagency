@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Presentation rules
+- Keep supplementary author and marketing sections in a focused shared component module so the homepage remains readable.
+- Display the supplied opening photograph at its natural aspect ratio in normal page flow, with copy below it, to preserve the entire image without overlays.
