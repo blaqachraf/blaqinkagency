@@ -144,7 +144,7 @@ html { scroll-behavior: smooth; }
 }
 .opening-copy a { text-shadow: inherit; }
 .opening-shade {
-  background: linear-gradient(90deg, oklch(0.08 0.005 60 / 82%) 0%, oklch(0.08 0.005 60 / 55%) 32%, oklch(0.08 0.005 60 / 0%) 58%);
+  background: linear-gradient(90deg, oklch(0.08 0.005 60 / 88%) 0%, oklch(0.08 0.005 60 / 70%) 38%, oklch(0.08 0.005 60 / 0%) 62%);
 }
 @media (max-width: 767px) {
   .opening-shade { background: linear-gradient(90deg, oklch(0.08 0.005 60 / 80%), oklch(0.08 0.005 60 / 35%)); }
