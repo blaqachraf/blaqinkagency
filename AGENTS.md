@@ -32,3 +32,4 @@ use the editor.
 ## Presentation rules
 - Keep supplementary author and marketing sections in a focused shared component module so the homepage remains readable.
 - Keep the opening photograph uncropped in a shared grid layer with the opening copy and actions, so transparent text overlays preserve the original image proportions.
+- Normalize publishing-strip logo assets to square canvases before display so source whitespace cannot make equally sized logos look uneven.

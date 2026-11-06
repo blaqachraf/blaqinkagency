@@ -6,14 +6,14 @@ import { BookOpen, ChevronRight, PenTool, Star, Trophy } from "lucide-react";
 import { AuthorSections, MarketingSection, AuthorGuidance } from "@/components/agency-sections";
 import covers from "@/assets/covers.jpg";
 import author from "@/assets/author.jpg";
-import amazonLogo from "@/assets/amazon-logo.asset.json";
-import barnesNobleLogo from "@/assets/barnes-noble-logo.asset.json";
-import appleBooksLogo from "@/assets/apple-books-logo.asset.json";
-import audibleLogo from "@/assets/audible-logo.asset.json";
-import ingramsparkLogo from "@/assets/ingramspark-logo.asset.json";
-import koboLogo from "@/assets/kobo-logo.asset.json";
-import goodreadsLogo from "@/assets/goodreads-logo.asset.json";
-import spotifyLogo from "@/assets/spotify-logo.asset.json";
+import amazonLogo from "@/assets/amazon-square.jpg.asset.json";
+import barnesNobleLogo from "@/assets/barnes-noble-square.jpg.asset.json";
+import appleBooksLogo from "@/assets/apple-books-square.jpg.asset.json";
+import audibleLogo from "@/assets/audible-square.jpg.asset.json";
+import ingramsparkLogo from "@/assets/ingramspark-fitted.jpg.asset.json";
+import koboLogo from "@/assets/kobo-square.jpg.asset.json";
+import goodreadsLogo from "@/assets/goodreads-fitted.jpg.asset.json";
+import spotifyLogo from "@/assets/spotify-square.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -126,7 +126,7 @@ function Index() {
             <div key={k} aria-hidden={k === 1 ? true : undefined} className="flex shrink-0 items-center">
               {platforms.map(({ name, logo }) => (
                 <div key={name} className="flex shrink-0 items-center gap-10 pr-10 sm:gap-16 sm:pr-16">
-                  <img src={logo.url} alt={name} width={128} height={128} className="h-28 w-28 shrink-0 object-contain sm:h-32 sm:w-32" />
+                  <img src={logo.url} alt={name} width={160} height={160} className="h-32 w-32 shrink-0 rounded-[22%] object-contain sm:h-40 sm:w-40" />
                   <span aria-hidden="true" className="font-display text-2xl text-primary">✦</span>
                 </div>
               ))}
